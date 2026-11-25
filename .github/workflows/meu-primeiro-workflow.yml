@@ -8,9 +8,9 @@ on:
 jobs: 
   giropops:
     runs-on: ubuntu-latest
-      steps: 
-        - name: Confere versão Ubuntu
-          run: cat /etc/os-release
+    steps: 
+      - name: Confere versão Ubuntu
+        run: cat /etc/os-release
 
-        - name: Exibir Menssagem 
-          run: echo "Teste de exibição!!! Funfou?" 
+      - name: Exibir Menssagem 
+        run: echo "Teste de exibição!!! Funfou?" 
