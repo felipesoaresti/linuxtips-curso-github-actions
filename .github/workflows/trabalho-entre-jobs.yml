@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: strigus
+          name: strigus-upload
           path: ${{ github.workspace }}/mensagem.txt
 
   
@@ -27,15 +27,17 @@ jobs:
       steps:
         - uses: actions/download-artifact@v4
           with: 
-            name: strigus
-            path: mensagem.txt
+            name: strigus-upload
+            path:  strigus
 
-        - name: Ver o ocnteudo do diretprio 
-          run: ls -lha
+        - name: Ver o conteudo do diretprio 
+          run: ls -lha  && ls  ./strigus/
       
-        - name
+        - name: Acessa arquivo mensagem
+          run: mv strigus/mensagem.txt . && rm -rf ./strigus
         
-        
-          - name: Ler o conteudo do arquivo mensagem.txt
-          run: cat mensagem.txt
+        - name: Ver o conteudo do diretório e do arquivo mensagem.txt
+          run: ls -lha && cat mensagem.txt
+
+          
 
