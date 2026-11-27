@@ -1,0 +1,23 @@
+name: Primeiro Workflow 
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs: 
+  giropops:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Confere versão Ubuntu
+        run: cat /etc/os-release
+
+      - name: Exibir Menssagem 
+        run: echo "Teste de exibição!!! Funfou?" > mensagem.txt
+
+      - name: Qualquer outra coisa
+        run: ls -lha
+      
+      - name: Ler o ocnteudo do arquivo mensagem.txt
+        run: cat mensagem.txt
+        
