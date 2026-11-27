@@ -1,4 +1,4 @@
-name: Arquivos compartilhados entre steps 
+name: Arquivos compartilhados entre jobs
 
 on: 
   push:
