@@ -1,4 +1,4 @@
-name: Primeiro Workflow 
+name: Arquivos compartilhados entre steps 
 
 on: 
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs: 
-  giropops:
+  entre_steps:
     runs-on: ubuntu-latest
     steps: 
       - name: Confere versão Ubuntu
@@ -20,4 +20,4 @@ jobs:
       
       - name: Ler o ocnteudo do arquivo mensagem.txt
         run: cat mensagem.txt
-        
+
