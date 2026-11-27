@@ -24,20 +24,20 @@ jobs:
   job_2:
     runs-on: ubuntu-latest
     needs: job_1
-      steps:
-        - uses: actions/download-artifact@v4
-          with: 
-            name: strigus-upload
-            path:  strigus
+    steps:
+      - uses: actions/download-artifact@v4
+        with: 
+          name: strigus-upload
+          path: strigus
 
-        - name: Ver o conteudo do diretprio 
-          run: ls -lha  && ls  ./strigus/
+      - name: Ver o conteudo do diretprio 
+        run: ls -lha  && ls  ./strigus/
+    
+      - name: Acessa arquivo mensagem
+        run: mv strigus/mensagem.txt . && rm -rf ./strigus
       
-        - name: Acessa arquivo mensagem
-          run: mv strigus/mensagem.txt . && rm -rf ./strigus
-        
-        - name: Ver o conteudo do diretório e do arquivo mensagem.txt
-          run: ls -lha && cat mensagem.txt
+      - name: Ver o conteudo do diretório e do arquivo mensagem.txt
+        run: ls -lha && cat mensagem.txt
 
-          
+
 
